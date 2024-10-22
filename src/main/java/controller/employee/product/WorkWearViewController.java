@@ -1,8 +1,8 @@
-package controller.employee;
+package controller.employee.product;
 
 import javafx.fxml.FXML;
 
-public class WorkWearViewController extends BaseProductController{
+public class WorkWearViewController extends BaseProductController {
     @FXML
     public void initialize() {
         // Product data

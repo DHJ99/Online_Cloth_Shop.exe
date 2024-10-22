@@ -1,8 +1,8 @@
-package controller.employee;
+package controller.employee.product;
 
 import javafx.fxml.FXML;
 
-public class DressViewController extends BaseProductController  {
+public class DressViewController extends BaseProductController {
 
     @FXML
     public void initialize() {

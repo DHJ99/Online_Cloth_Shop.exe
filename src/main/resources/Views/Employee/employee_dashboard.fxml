@@ -14,43 +14,43 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0"
-            prefWidth="765.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controller.employee.EmployeeDashboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.employee.EmployeeDashboardController">
    <BorderPane fx:id="bp" layoutY="155.0" prefHeight="490.0" prefWidth="765.0">
       <left>
          <VBox prefHeight="200.0" prefWidth="143.0" BorderPane.alignment="CENTER">
             <JFXButton fx:id="btnHome" onAction="#btnHome" prefHeight="53.0" prefWidth="143.0" text="HOME">
                <VBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0"/>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
                </VBox.margin>
             </JFXButton>
             <JFXButton fx:id="btnDress" onAction="#btnDress" prefHeight="53.0" prefWidth="250.0" text="DRESSES">
                <VBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0"/>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
                </VBox.margin>
             </JFXButton>
-            <JFXButton fx:id="btnWorkwears" onAction="#btnWorkwears" prefHeight="53.0" prefWidth="250.0"
-                       text="WORKWEAR">
+            <JFXButton fx:id="btnWorkwears" onAction="#btnWorkwears" prefHeight="53.0" prefWidth="250.0" text="WORKWEAR">
                <VBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0"/>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
                </VBox.margin>
             </JFXButton>
-            <JFXButton fx:id="btnNewArrivals" onAction="#btnNewArrivals" prefHeight="53.0" prefWidth="250.0"
-                       text="NEW ARRIVALS">
+            <JFXButton fx:id="btnNewArrivals" onAction="#btnNewArrivals" prefHeight="53.0" prefWidth="250.0" text="NEW ARRIVALS">
                <VBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0"/>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
                </VBox.margin>
             </JFXButton>
-            <JFXButton fx:id="btnBestSeller" onAction="#btnBestSeller" prefHeight="53.0" prefWidth="250.0"
-                       text="BEST SELLERS">
+            <JFXButton fx:id="btnBestSeller" onAction="#btnBestSeller" prefHeight="53.0" prefWidth="250.0" text="BEST SELLERS">
                <VBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0"/>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="btnAddCustomer" onAction="#btnAddCustomer" prefHeight="53.0" prefWidth="250.0" text="ADD CUSTOMER">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
                </VBox.margin>
             </JFXButton>
             <JFXButton fx:id="btnLogout" onAction="#btnLogout" prefHeight="53.0" prefWidth="250.0" text="LOG OUT">
                <VBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0"/>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
                </VBox.margin>
             </JFXButton>
          </VBox>
@@ -60,35 +60,29 @@
             <children>
                <ImageView fx:id="imgerSlider1" fitHeight="318.0" fitWidth="621.0" preserveRatio="true">
                   <effect>
-                     <Glow/>
+                     <Glow />
                   </effect>
                </ImageView>
-               <AnchorPane layoutX="14.0" layoutY="327.0" prefHeight="154.0" prefWidth="595.0"
-                           style="-fx-background-color: #313438; -fx-background-radius: 20;">
+               <AnchorPane layoutX="14.0" layoutY="327.0" prefHeight="154.0" prefWidth="595.0" style="-fx-background-color: #313438; -fx-background-radius: 20;">
                   <children>
-                     <Label layoutX="115.0" layoutY="14.0" prefHeight="36.0" prefWidth="366.0"
-                            text="Newsletter subscription" textFill="#f5f5f5">
+                     <Label layoutX="115.0" layoutY="7.0" prefHeight="36.0" prefWidth="366.0" text="Newsletter subscription" textFill="#f5f5f5">
                         <font>
-                           <Font name="Copperplate Gothic Bold" size="25.0"/>
+                           <Font name="Copperplate Gothic Bold" size="25.0" />
                         </font>
                      </Label>
-                     <Label layoutX="36.0" layoutY="52.0"
-                            text="Sign up for Rimerio Streetwear updates to receive information about new arrivals, offers &amp; promos."
-                            textFill="WHITE"/>
-                     <JFXTextField focusColor="WHITE" labelFloat="true" layoutX="149.0" layoutY="88.0" prefHeight="25.0"
-                                   prefWidth="298.0" promptText="Enter Your Email Address" unFocusColor="WHITE">
+                     <Label layoutX="36.0" layoutY="45.0" text="Sign up for Rimerio Streetwear updates to receive information about new arrivals, offers &amp; promos." textFill="WHITE" />
+                     <JFXTextField focusColor="WHITE" labelFloat="true" layoutX="149.0" layoutY="81.0" prefHeight="25.0" prefWidth="298.0" promptText="Enter Your Email Address" unFocusColor="WHITE">
                         <effect>
                            <Lighting specularConstant="2.0" specularExponent="0.0" surfaceScale="0.0">
                               <bumpInput>
-                                 <Shadow/>
+                                 <Shadow />
                               </bumpInput>
                            </Lighting>
                         </effect>
                      </JFXTextField>
-                     <JFXButton layoutX="149.0" layoutY="119.0" prefHeight="30.0" prefWidth="298.0"
-                                style="-fx-border-color: white;" text="Subscribe!" textFill="WHITE">
+                     <JFXButton layoutX="149.0" layoutY="112.0" prefHeight="30.0" prefWidth="298.0" style="-fx-border-color: white;" text="Subscribe!" textFill="WHITE">
                         <font>
-                           <Font name="Copperplate Gothic Bold" size="15.0"/>
+                           <Font name="Copperplate Gothic Bold" size="15.0" />
                         </font>
                      </JFXButton>
                   </children>
@@ -99,37 +93,37 @@
    </BorderPane>
    <ImageView fitHeight="123.0" fitWidth="104.0" pickOnBounds="true" preserveRatio="true">
       <image>
-         <Image url="@../../Imgs/Logo.png"/>
+         <Image url="@../../Imgs/Logo.png" />
       </image>
    </ImageView>
    <ImageView fitHeight="104.0" fitWidth="661.0" layoutX="104.0">
       <image>
-         <Image url="@../../Imgs/header.png"/>
+         <Image url="@../../Imgs/header.png" />
       </image>
    </ImageView>
    <ImageView fx:id="user" fitHeight="25.0" fitWidth="27.0" layoutX="599.0" layoutY="117.0">
       <image>
-         <Image url="@../../Imgs/user.png"/>
+         <Image url="@../../Imgs/user.png" />
       </image>
    </ImageView>
    <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="646.0" layoutY="117.0">
       <image>
-         <Image url="@../../Imgs/shopping-bag.png"/>
+         <Image url="@../../Imgs/shopping-bag.png" />
       </image>
    </ImageView>
    <Label layoutX="682.0" layoutY="119.0" text="Bag">
       <font>
-         <Font name="System Bold" size="15.0"/>
+         <Font name="System Bold" size="15.0" />
       </font>
    </Label>
    <Label fx:id="lblCount" layoutX="719.0" layoutY="121.0" text="( 0 )">
       <font>
-         <Font name="System Bold" size="15.0"/>
+         <Font name="System Bold" size="15.0" />
       </font>
    </Label>
    <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="31.0" layoutY="119.0">
       <image>
-         <Image url="@../../Imgs/index.png"/>
+         <Image url="@../../Imgs/index.png" />
       </image>
    </ImageView>
 </AnchorPane>

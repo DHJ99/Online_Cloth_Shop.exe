@@ -62,23 +62,33 @@ public class EmployeeDashboardController {
     }
 
     @FXML
-    void btnHome(ActionEvent event) {
+    public void btnHome(ActionEvent event) {
         bp.setCenter(ap);
     }
 
     @FXML
-    void btnDress(ActionEvent event) {
+    public void btnDress(ActionEvent event) {
         loadPage("dress_view");
     }
 
     @FXML
-    void btnNewArrivals(ActionEvent event) {
+    public void btnNewArrivals(ActionEvent event) {
         loadPage("new_arrivals_view");
     }
 
     @FXML
-    void btnWorkwears(ActionEvent event) {
+    public void btnWorkwears(ActionEvent event) {
         loadPage("work_wear_view");
+    }
+
+     @FXML
+    public void btnBestSeller(ActionEvent actionEvent) {
+        loadPage("best_sellers_view");
+    }
+
+     @FXML
+    public void btnAddCustomer(ActionEvent actionEvent) {
+        loadPage("add_customer_view");
     }
 
     @FXML
@@ -122,7 +132,5 @@ public class EmployeeDashboardController {
         alert.showAndWait();
     }
 
-    public void btnBestSeller(ActionEvent actionEvent) {
-        loadPage("best_sellers_view");
-    }
+
 }

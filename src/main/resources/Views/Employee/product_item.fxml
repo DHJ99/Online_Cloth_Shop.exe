@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="210.0" prefWidth="150.0" style="-fx-background-radius: 20; -fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.employee.ProductItemController">
+<AnchorPane prefHeight="210.0" prefWidth="150.0" style="-fx-background-radius: 20; -fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.employee.product.ProductItemController">
     <children>
         <ImageView fx:id="productImage" fitHeight="120.0" fitWidth="120.0" layoutX="25.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
         <JFXButton fx:id="btnXS" layoutX="16.0" layoutY="159.0" prefHeight="21.0" prefWidth="30.0" text="XS" />

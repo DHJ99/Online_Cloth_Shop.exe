@@ -1,4 +1,4 @@
-package controller.employee;
+package controller.employee.product;
 
 import javafx.fxml.FXML;
 

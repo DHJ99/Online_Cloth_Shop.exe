@@ -10,5 +10,5 @@
             minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0"
             prefWidth="609.0" xmlns="http://javafx.com/javafx/22"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controller.employee.WorkWearViewController">
+            fx:controller="controller.employee.product.WorkWearViewController">
 </AnchorPane>
