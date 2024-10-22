@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="588.0" prefWidth="758.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.admin.AdminDashboardController">
+   <children>
+      <BorderPane fx:id="bp" layoutY="155.0" prefHeight="425.0" prefWidth="650.0">
+         <left>
+            <VBox prefHeight="425.0" prefWidth="193.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="btnHome" onAction="#btnHome" prefHeight="53.0" prefWidth="250.0" text="HOME">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="btnUserManagement" onAction="#btnUserManagement" prefHeight="53.0" prefWidth="250.0" text="USER MANAGEMENT">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="btnInventryManagement" onAction="#btnInventryManagement" prefHeight="53.0" prefWidth="250.0" text="INVENTORY MANAGEMNET">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="btnSalesAnalytics" onAction="#btnSalesAnalytics" prefHeight="53.0" prefWidth="250.0" text="SALES ANALYTICES">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="btnEmployeePerformances" onAction="#btnEmployeePerformances" prefHeight="36.0" prefWidth="179.0" text="EMPLOYEE PERFORMANCES">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="btnSystemConfiguration" onAction="#btnSystemConfiguration" prefHeight="53.0" prefWidth="250.0" text="SYSTEM CONFIGURATION">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="btnLogout" onAction="#btnLogout" prefHeight="53.0" prefWidth="250.0" text="LOG OUT">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+                     </VBox.margin>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <AnchorPane fx:id="ap" prefHeight="425.0" prefWidth="533.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="imgerSlider1" fitHeight="415.0" fitWidth="552.0" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+      <ImageView fitHeight="123.0" fitWidth="104.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Imgs/Logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="104.0" fitWidth="656.0" layoutX="104.0">
+         <image>
+            <Image url="@../../Imgs/header.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="user" fitHeight="25.0" fitWidth="27.0" layoutX="708.0" layoutY="119.0">
+         <image>
+            <Image url="@../../Imgs/user.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="31.0" layoutY="119.0">
+         <image>
+            <Image url="@../../Imgs/index.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

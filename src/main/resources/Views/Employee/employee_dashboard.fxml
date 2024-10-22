@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0"
+            prefWidth="765.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.employee.EmployeeDashboardController">
+   <BorderPane fx:id="bp" layoutY="155.0" prefHeight="490.0" prefWidth="765.0">
+      <left>
+         <VBox prefHeight="200.0" prefWidth="143.0" BorderPane.alignment="CENTER">
+            <JFXButton fx:id="btnHome" onAction="#btnHome" prefHeight="53.0" prefWidth="143.0" text="HOME">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0"/>
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="btnDress" onAction="#btnDress" prefHeight="53.0" prefWidth="250.0" text="DRESSES">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0"/>
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="btnWorkwears" onAction="#btnWorkwears" prefHeight="53.0" prefWidth="250.0"
+                       text="WORKWEAR">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0"/>
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="btnNewArrivals" onAction="#btnNewArrivals" prefHeight="53.0" prefWidth="250.0"
+                       text="NEW ARRIVALS">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0"/>
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="btnBestSeller" onAction="#btnBestSeller" prefHeight="53.0" prefWidth="250.0"
+                       text="BEST SELLERS">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0"/>
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="btnLogout" onAction="#btnLogout" prefHeight="53.0" prefWidth="250.0" text="LOG OUT">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0"/>
+               </VBox.margin>
+            </JFXButton>
+         </VBox>
+      </left>
+      <center>
+         <AnchorPane fx:id="ap" prefHeight="487.0" prefWidth="616.0" BorderPane.alignment="CENTER">
+            <children>
+               <ImageView fx:id="imgerSlider1" fitHeight="318.0" fitWidth="621.0" preserveRatio="true">
+                  <effect>
+                     <Glow/>
+                  </effect>
+               </ImageView>
+               <AnchorPane layoutX="14.0" layoutY="327.0" prefHeight="154.0" prefWidth="595.0"
+                           style="-fx-background-color: #313438; -fx-background-radius: 20;">
+                  <children>
+                     <Label layoutX="115.0" layoutY="14.0" prefHeight="36.0" prefWidth="366.0"
+                            text="Newsletter subscription" textFill="#f5f5f5">
+                        <font>
+                           <Font name="Copperplate Gothic Bold" size="25.0"/>
+                        </font>
+                     </Label>
+                     <Label layoutX="36.0" layoutY="52.0"
+                            text="Sign up for Rimerio Streetwear updates to receive information about new arrivals, offers &amp; promos."
+                            textFill="WHITE"/>
+                     <JFXTextField focusColor="WHITE" labelFloat="true" layoutX="149.0" layoutY="88.0" prefHeight="25.0"
+                                   prefWidth="298.0" promptText="Enter Your Email Address" unFocusColor="WHITE">
+                        <effect>
+                           <Lighting specularConstant="2.0" specularExponent="0.0" surfaceScale="0.0">
+                              <bumpInput>
+                                 <Shadow/>
+                              </bumpInput>
+                           </Lighting>
+                        </effect>
+                     </JFXTextField>
+                     <JFXButton layoutX="149.0" layoutY="119.0" prefHeight="30.0" prefWidth="298.0"
+                                style="-fx-border-color: white;" text="Subscribe!" textFill="WHITE">
+                        <font>
+                           <Font name="Copperplate Gothic Bold" size="15.0"/>
+                        </font>
+                     </JFXButton>
+                  </children>
+               </AnchorPane>
+            </children>
+         </AnchorPane>
+      </center>
+   </BorderPane>
+   <ImageView fitHeight="123.0" fitWidth="104.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../Imgs/Logo.png"/>
+      </image>
+   </ImageView>
+   <ImageView fitHeight="104.0" fitWidth="661.0" layoutX="104.0">
+      <image>
+         <Image url="@../../Imgs/header.png"/>
+      </image>
+   </ImageView>
+   <ImageView fx:id="user" fitHeight="25.0" fitWidth="27.0" layoutX="599.0" layoutY="117.0">
+      <image>
+         <Image url="@../../Imgs/user.png"/>
+      </image>
+   </ImageView>
+   <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="646.0" layoutY="117.0">
+      <image>
+         <Image url="@../../Imgs/shopping-bag.png"/>
+      </image>
+   </ImageView>
+   <Label layoutX="682.0" layoutY="119.0" text="Bag">
+      <font>
+         <Font name="System Bold" size="15.0"/>
+      </font>
+   </Label>
+   <Label fx:id="lblCount" layoutX="719.0" layoutY="121.0" text="( 0 )">
+      <font>
+         <Font name="System Bold" size="15.0"/>
+      </font>
+   </Label>
+   <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="31.0" layoutY="119.0">
+      <image>
+         <Image url="@../../Imgs/index.png"/>
+      </image>
+   </ImageView>
+</AnchorPane>

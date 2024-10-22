@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="210.0" prefWidth="150.0" style="-fx-background-radius: 20; -fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.employee.ProductItemController">
+    <children>
+        <ImageView fx:id="productImage" fitHeight="120.0" fitWidth="120.0" layoutX="25.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
+        <JFXButton fx:id="btnXS" layoutX="16.0" layoutY="159.0" prefHeight="21.0" prefWidth="30.0" text="XS" />
+        <JFXButton fx:id="btnS" layoutX="47.0" layoutY="159.0" prefHeight="21.0" prefWidth="30.0" text="S" />
+        <JFXButton fx:id="btnM" layoutX="76.0" layoutY="159.0" prefHeight="21.0" prefWidth="30.0" text="M" />
+        <JFXButton fx:id="btnL" layoutX="106.0" layoutY="159.0" prefHeight="21.0" prefWidth="30.0" text="L" />
+        <JFXButton fx:id="btnAdd" layoutX="89.0" layoutY="183.0" text="ADD">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </JFXButton>
+        <Label fx:id="productPrice" layoutX="19.0" layoutY="186.0" prefHeight="17.0" prefWidth="66.0">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label fx:id="productName" layoutX="25.0" layoutY="117.0" prefHeight="55.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" />
+    </children>
+</AnchorPane>
