@@ -26,6 +26,7 @@ public class EmployeeDashboardController {
     @FXML private BorderPane bp;
     @FXML private JFXButton btnLogout;
     @FXML private ImageView imgerSlider1;
+    @FXML private ImageView cart;
 
     private List<String> imagePaths;
     private int currentImageIndex1 = 0;
@@ -39,6 +40,11 @@ public class EmployeeDashboardController {
                 "/Imgs/3.png"
         );
         setupImageSlider();
+
+        //Cart Open
+        cart.setOnMouseClicked(event ->{
+            loadPage("place_order_view");
+        });
     }
 
     private void setupImageSlider() {
