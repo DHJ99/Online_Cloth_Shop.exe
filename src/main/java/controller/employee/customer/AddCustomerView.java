@@ -115,4 +115,10 @@ public class AddCustomerView implements Initializable {
         ObservableList<Customer> customerObservableList =service.getAll();
         tblCustomers.setItems(customerObservableList);
     }
+
+    public void btnUpdate(ActionEvent actionEvent) {
+    }
+
+    public void btnSearch(ActionEvent actionEvent) {
+    }
 }
