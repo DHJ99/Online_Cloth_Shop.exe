@@ -1,4 +1,8 @@
 package service.customer.impl;
 
-public class ItemServiceImpl {
+import service.SuperService;
+import service.customer.ItemService;
+
+public class ItemServiceImpl implements ItemService , SuperService {
+
 }

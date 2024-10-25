@@ -25,22 +25,22 @@
       <JFXTextField fx:id="txtAddress" layoutX="233.0" layoutY="181.0" promptText="Address" />
       <JFXTextField fx:id="txtCity" layoutX="431.0" layoutY="175.0" promptText="City" />
       <JFXTextField fx:id="txtMobile" layoutX="28.0" layoutY="181.0" promptText="Mobile " />
-      <JFXButton layoutX="136.0" layoutY="227.0" onAction="#btnAdd" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #4cd137;" text="Add" textFill="WHITE">
+      <JFXButton layoutX="91.0" layoutY="224.0" onAction="#btnAdd" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #4cd137;" text="Add" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="219.0" layoutY="227.0" onAction="#btnUpdate" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #00a8ff;" text="Update" textFill="WHITE">
+      <JFXButton layoutX="174.0" layoutY="224.0" onAction="#btnUpdate" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #00a8ff;" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="300.0" layoutY="227.0" onAction="#btnDelete" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #e84118;" text="Delete" textFill="WHITE">
+      <JFXButton layoutX="255.0" layoutY="224.0" onAction="#btnDelete" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #e84118;" text="Delete" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="386.0" layoutY="227.0" onAction="#btnSearch" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #353b48;" text="Search" textFill="WHITE">
+      <JFXButton layoutX="341.0" layoutY="224.0" onAction="#btnSearch" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #353b48;" text="Search" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -56,5 +56,10 @@
       </TableView>
       <Separator layoutX="188.0" layoutY="111.0" orientation="VERTICAL" prefHeight="105.0" prefWidth="5.0" />
       <Separator layoutX="388.0" layoutY="111.0" orientation="VERTICAL" prefHeight="105.0" prefWidth="5.0" />
+      <JFXButton layoutX="425.0" layoutY="224.0" onAction="#btnReload" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #353b48;" text="Reload" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

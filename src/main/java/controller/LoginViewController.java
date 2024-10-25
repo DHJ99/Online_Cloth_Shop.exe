@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.stage.Stage;
+import service.customer.impl.UserServiceImpl;
 
 import java.io.IOException;
 
@@ -31,8 +32,7 @@ public class LoginViewController {
     @FXML
     private JFXTextField txtUserName;
 
-    private static final String CORRECT_USERNAME = "user";
-    private static final String CORRECT_PASSWORD = "1234";
+    private UserServiceImpl userService = new UserServiceImpl();
 
     @FXML
     void btnLogin(ActionEvent event) {
@@ -54,7 +54,7 @@ public class LoginViewController {
             return;
         }
 
-        boolean isAuthenticated = authenticate(username, password);
+        boolean isAuthenticated = userService.authenicate(username ,password);
 
         if (isAuthenticated) {
             if (chkAdmin.isSelected()) {
@@ -68,9 +68,7 @@ public class LoginViewController {
         }
     }
 
-    private boolean authenticate(String username, String password) {
-        return username.equals(CORRECT_USERNAME) && password.equals(CORRECT_PASSWORD);
-    }
+
 
     private void openAdminDashboard() {
         try {

@@ -1,12 +1,26 @@
 package repository.Customer.impl;
 
-import repository.Customer.CustomerDao;
-import repository.SuperDao;
+import entity.UserEntity;
+import repository.Customer.UserDao;
+import util.CrudUtil;  
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class CustomerDaoImpl implements CustomerDao, SuperDao {
+public class UserDaoImpl implements UserDao {
+    @Override
+    public UserEntity findUserByUsername(String username) throws SQLException {
+        String sql = "SELECT * FROM users WHERE username = ?";
+
+        ResultSet rs = CrudUtil.execute(sql, username);
+
+        if (rs.next()) {
+            return new UserEntity(rs.getString("username"), rs.getString("password"));
+        }
+        return null;
+    }
+
     @Override
     public boolean add(Object entity) throws SQLException {
         return false;

@@ -1,4 +1,4 @@
-package utill;
+package util;
 
 import entity.CustomerEntity;
 import org.hibernate.Session;

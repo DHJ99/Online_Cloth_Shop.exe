@@ -14,7 +14,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import service.ServiceFactory;
 import service.customer.CustomerService;
-import utill.ServiceType;
+import util.ServiceType;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -59,33 +59,6 @@ public class AddCustomerView implements Initializable {
 
     CustomerService1 service = CustomerController.getInstance();
 
-    @FXML
-    void btnAdd(ActionEvent event) {
-        CustomerService customerService = ServiceFactory.getInstance().getServiceType(ServiceType.CUSTOMER);
-        Customer customer = new Customer(
-                txtId.getText(),
-                cmbTitle.getValue().toString(),
-                txtName.getText(),
-                txtMobile.getText(),
-                txtAddress.getText(),
-                txtCity.getText()
-        );
-        if(customerService.addCustomer(customer)){
-            new Alert(Alert.AlertType.INFORMATION,"Customer Added !!").show();
-        }else {
-            new Alert(Alert.AlertType.ERROR,"Customer Not Added :(").show();
-        }
-    }
-
-    @FXML
-    void btnDelete(ActionEvent event) {
-        if (service.deleteCustomer(txtId.getText())){
-            new Alert(Alert.AlertType.INFORMATION,"Customer Deleted !!").show();
-        }else{
-            new Alert(Alert.AlertType.ERROR).show();
-        }
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -97,7 +70,9 @@ public class AddCustomerView implements Initializable {
         titles.add("Mr");
         titles.add("Miss");
         titles.add("Ms");
+        titles.add("Dr");
         cmbTitle.setItems(titles);
+
         tblCustomers.getSelectionModel().selectedItemProperty().addListener(((observableValue, oldValue, newValue) -> {
             setTextToValues(newValue);
         }));
@@ -105,10 +80,58 @@ public class AddCustomerView implements Initializable {
 
     }
 
+    @FXML
+    void btnAdd(ActionEvent event) {
+        CustomerService customerService = ServiceFactory.getInstance().getServiceType(ServiceType.CUSTOMER);
+        Customer customer = new Customer(
+                txtId.getText(),
+                cmbTitle.getValue() != null ? cmbTitle.getValue().toString() : "",  // Ensure combo box has a value
+                txtName.getText(),
+                txtMobile.getText(),
+                txtAddress.getText(),
+                txtCity.getText()
+        );
+
+        if (customerService.addCustomer(customer)) {
+            new Alert(Alert.AlertType.INFORMATION, "Customer Added!!").show();
+            clearForm();
+            loadTable();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Customer Not Added!!").show();
+        }
+    }
+
+    private void clearForm() {
+        txtId.clear();
+        cmbTitle.setValue(null);
+        txtName.clear();
+        txtMobile.clear();
+        txtAddress.clear();
+        txtCity.clear();
+    }
+
+
+    @FXML
+    void btnDelete(ActionEvent event) {
+        if (service.deleteCustomer(txtId.getText())){
+            new Alert(Alert.AlertType.INFORMATION,"Customer Deleted !!").show();
+            loadTable();
+        }else{
+            new Alert(Alert.AlertType.ERROR,"Customer Not Deleted !!").show();
+        }
+    }
+
+    @FXML
+    void btnReload(ActionEvent event) {
+        loadTable();
+    }
+
     private void setTextToValues(Customer newValue) {
         txtId.setText(newValue.getId());
         txtName.setText(newValue.getName());
+        txtMobile.setText(newValue.getMobile());
         txtAddress.setText(newValue.getAddress());
+        txtCity.setText(newValue.getCity());
     }
 
     private void loadTable() {
@@ -116,9 +139,39 @@ public class AddCustomerView implements Initializable {
         tblCustomers.setItems(customerObservableList);
     }
 
+    @FXML
     public void btnUpdate(ActionEvent actionEvent) {
+        Customer updatedCustomer = new Customer(
+                txtId.getText(),
+                cmbTitle.getValue(),
+                txtName.getText(),
+                txtMobile.getText(),
+                txtAddress.getText(),
+                txtCity.getText()
+        );
+
+        if (service.updateCustomer(updatedCustomer)) {
+            new Alert(Alert.AlertType.INFORMATION, "Customer Updated Successfully!").show();
+            loadTable();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Failed to Update Customer").show();
+        }
     }
 
+    @FXML
     public void btnSearch(ActionEvent actionEvent) {
+        String customerId = txtId.getText();
+
+        Customer customer = service.searchCustomer(customerId);
+
+        if (customer != null) {
+            setTextToValues(customer);
+            new Alert(Alert.AlertType.INFORMATION, "Customer Found!").show();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Customer Not Found!").show();
+        }
     }
+
+
+
 }

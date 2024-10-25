@@ -4,11 +4,9 @@ import db.DBConnection;
 import dto.Customer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.Alert;
-import utill.CrudUtil;
+import util.CrudUtil;
 
 import java.sql.*;
-import java.util.concurrent.Executor;
 
 public class CustomerController implements CustomerService1 {
 
@@ -23,26 +21,25 @@ public class CustomerController implements CustomerService1 {
 
     @Override
     public boolean addCustomer(Customer customer) {
+        String SQL = "INSERT INTO customer (cust_id, title, name, mobile, address, city) VALUES (?, ?, ?, ?, ?, ?)";
         try {
-            String SQL = "INSERT INTO customer VALUES(?,?,?,?,?,?)";
-            Connection connection = DBConnection.getInstance().getConnection();
-            PreparedStatement psTm = connection.prepareStatement(SQL);
-            psTm.setObject(1, customer.getId());
-            psTm.setObject(2, customer.getTitle());
-            psTm.setObject(3, customer.getName());
-            psTm.setObject(4,customer.getMobile());
-            psTm.setObject(5, customer.getAddress());
-            psTm.setObject(6, customer.getCity());
-            return psTm.executeUpdate() > 0;
+            return CrudUtil.execute(SQL,
+                    customer.getId(),
+                    customer.getTitle(),
+                    customer.getName(),
+                    customer.getMobile(),
+                    customer.getAddress(),
+                    customer.getCity()
+            );
         } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, "Error : " + e.getMessage()).show();
+            e.printStackTrace();
+            return false;
         }
-        return false;
     }
 
     @Override
     public boolean deleteCustomer(String id) {
-        String SQL = "DELETE FROM customer WHERE CustID='" + id + "'";
+        String SQL = "DELETE FROM customer WHERE cust_id='" + id + "'";
         try {
             Connection connection = DBConnection.getInstance().getConnection();
             return connection.createStatement().executeUpdate(SQL) > 0;
@@ -61,16 +58,14 @@ public class CustomerController implements CustomerService1 {
             ResultSet resultSet = psTm.executeQuery();
             while (resultSet.next()) {
                 Customer customer = new Customer(
-                        resultSet.getString("Id"),
-                        resultSet.getString("Title"),
-                        resultSet.getString("Name"),
-                        resultSet.getString("Mobile"),
-                        resultSet.getString("Address"),
-                        resultSet.getString("City")
-
+                        resultSet.getString("cust_id"),
+                        resultSet.getString("title"),
+                        resultSet.getString("name"),
+                        resultSet.getString("mobile"),
+                        resultSet.getString("address"),
+                        resultSet.getString("city")
                 );
                 customerObservableList.add(customer);
-                System.out.println(customer);
             }
             return customerObservableList;
         } catch (SQLException e) {
@@ -80,15 +75,26 @@ public class CustomerController implements CustomerService1 {
 
     @Override
     public boolean updateCustomer(Customer customer) {
-        return false;
+        String SQL = "UPDATE customer SET title=?, name=?, mobile=?, address=?, city=? WHERE cust_id=?";
+
+        try {
+            return CrudUtil.execute(SQL,
+                    customer.getTitle(),
+                    customer.getName(),
+                    customer.getMobile(),
+                    customer.getAddress(),
+                    customer.getCity(),
+                    customer.getId()
+            );
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to update customer: " + e.getMessage(), e);
+        }
     }
 
     @Override
     public Customer searchCustomer(String id) {
-        String SQl = "SELECT * FROM customer WHERE CustID=?";
-
+        String SQl = "SELECT * FROM customer WHERE cust_id=?";
         try {
-
             ResultSet resultSet = CrudUtil.execute(SQl, id);
 
             while (resultSet.next()) {
@@ -114,7 +120,6 @@ public class CustomerController implements CustomerService1 {
         customerObservableList.forEach(customer -> {
             customerIds.add(customer.getId());
         });
-
         return customerIds;
     }
 }
